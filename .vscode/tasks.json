@@ -6,7 +6,7 @@
         {
             "label": "all:ninja",
             "type": "shell",
-            "command": "cmake -S . -B out/build -G Ninja; cd out/build; ninja; ./template-CppCmake",
+            "command": "cmake -S . -B out/build -G Ninja -D GIT_SUBMODULE_UPDATE=OFF; cd out/build; ninja; ./template-CppCmake",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -15,7 +15,7 @@
         {
             "label": "all:make",
             "type": "shell",
-            "command": "cmake -S . -B out/build -G Ninja; cd out/build; ninja; ./template-CppCmake",
+            "command": "cmake -S . -B out/build -G Unix Makefiles -D GIT_SUBMODULE_UPDATE=OFF; cd out/build; make; ./template-CppCmake",
             "group": "build"
         },
         {
