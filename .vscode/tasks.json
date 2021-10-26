@@ -4,29 +4,44 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "all:ninja",
+            "type": "shell",
+            "command": "cmake -S . -B out/build -G Ninja; cd out/build; ninja; ./template-CppCmake",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "all:make",
+            "type": "shell",
+            "command": "cmake -S . -B out/build -G Ninja; cd out/build; ninja; ./template-CppCmake",
+            "group": "build"
+        },
+        {
             "label": "configure:ninja",
             "type": "shell",
-            "command": "cmake -S . -B out/build -G Ninja",
+            "command": "cmake -S . -B out/build -G Ninja"
         },
         {
             "label": "configure:make",
             "type": "shell",
-            "command": "cmake -S . -B out/build -G 'Unix Makefiles'",
+            "command": "cmake -S . -B out/build -G 'Unix Makefiles'"
         },
         {
             "label": "build:ninja",
             "type": "shell",
-            "command": "cd out/build; ninja",
+            "command": "cd out/build; ninja"
         },
         {
             "label": "build:make",
             "type": "shell",
-            "command": "cd out/build; make",
+            "command": "cd out/build; make"
         },
         {
             "label": "run",
             "type": "shell",
             "command": "cd out/build; ./template-CppCmake"
-        },
+        }
     ]
 }
