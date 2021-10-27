@@ -1,10 +1,18 @@
+#include <iostream>
+
 #include <GLFW/glfw3.h>
 
+#include <config.h>
 #include <log.hpp>
 
-int main() {
-    GLFWwindow *window;
+void printStartupMessage() {
+    std::cout << "\n" << PROJECT_NAME << " " << PROJECT_VERSION << "\n\n";
+}
 
+int main() {
+    printStartupMessage();
+
+    GLFWwindow *window;
     if(!glfwInit()) {
         log("Failed to initialize GLFW", 1);
         exit(EXIT_FAILURE);
